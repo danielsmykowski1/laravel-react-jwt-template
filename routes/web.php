@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{uri?}', function () {
     return view('welcome');
-});
+})->where('uri', '(.*)');
+
+// Route::fallback(function() {
+//     return view('welcome');
+// });
